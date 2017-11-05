@@ -1,0 +1,28 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row">
+        <div class="col-md-4 push-md-4">
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h1>SB Admin BS4 Angular4</h1>
+            <form role="form">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg"  placeholder="Full Name" [(ngModel)]="user.fullname" name="fullname">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg"  placeholder="Email" [(ngModel)]="user.email"  name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg"  placeholder="Password" [(ngModel)]="user.password"  name="password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg"  placeholder="Repeat Password" [(ngModel)]="user.repassword"  name="repassword">
+                    </div>
+                </div>
+                <a class="btn rounded-btn" (click)="register(user)"> Register </a>&nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/login']"> Log in </a>
+            </form>
+        </div>
+    </div>
+</div>

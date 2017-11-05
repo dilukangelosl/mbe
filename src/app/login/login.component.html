@@ -1,0 +1,26 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row">
+        <div class="col-md-4 push-md-4">
+            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+            <h1>Marina Dashboard</h1>
+            <form role="form">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" name="email" class="form-control input-underline input-lg"  placeholder="Email" [(ngModel)]="user.email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password"  name="password"class="form-control input-underline input-lg"  placeholder="Password" [(ngModel)]="user.password">
+                    </div>
+                </div>
+                <a class="btn rounded-btn" (click)="login(user.email,user.password)"> Log in </a>
+                &nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+            </form>
+
+            <div style="margin-top:25px;" *ngIf="loading">
+                <ngb-progressbar type="warning" [value]="100" [striped]="true" [animated]="true"><i>Logging in...</i></ngb-progressbar>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+
+<div class="box">
+    <h2>Drop File</h2>
+    <div class="dropzone"
+          fileDrop
+         (filesDropped)="handleDrop($event)"
+         (filesHovered)="dropzoneState($event)"
+         [ngClass]="{'active': dropzoneActive}">
+         <i class="fa fa-cloud-upload fa-2x"></i>
+    </div>
+</div>
+
+<div *ngIf="currentUpload" style="margin:10px;">
+    <progress class="progress is-success" min=1 max=100 value="{{ currentUpload?.progress }}" style="width:100%"></progress>
+    {{currentUpload?.progress}}% Complete
+</div>
+
+
+        <div class="row" style="height:500px;overflow:scroll">
+                <div *ngFor="let item of images | async" class="col-md-4" style="width:300px;height:300px;" [ngStyle]="{'background': '#fff url(' + item.url + ') no-repeat 0 0', 'background-size':'cover', 'background-position':'center'}">
+                       
+                      </div>
+        </div>
+      
